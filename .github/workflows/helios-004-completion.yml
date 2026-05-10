@@ -1,0 +1,100 @@
+name: AGI ALPHA HELIOS-004 Completion / Autonomous
+
+on:
+  workflow_dispatch:
+    inputs:
+      output_dir:
+        description: "Output directory"
+        required: false
+        default: ""
+      publish_pages:
+        description: "Publish HELIOS completion page to GitHub Pages"
+        type: boolean
+        required: false
+        default: true
+  push:
+    branches: ["main"]
+    paths:
+      - "agialpha_sovereign_capstone/**"
+      - "config/**"
+      - ".github/workflows/helios-004-completion.yml"
+
+permissions:
+  contents: read
+  actions: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: helios-004-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  DEFAULT_OUT: runs/helios-004/${{ github.run_id }}
+  PUBLISH_PAGES: ${{ github.event.inputs.publish_pages || 'true' }}
+
+jobs:
+  helios-complete:
+    name: Complete HELIOS lineage and handoff
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Resolve output path
+        id: paths
+        shell: bash
+        run: |
+          if [[ -n "${{ github.event.inputs.output_dir || '' }}" ]]; then
+            OUT="${{ github.event.inputs.output_dir }}"
+          else
+            OUT="$DEFAULT_OUT"
+          fi
+          echo "out=$OUT" >> "$GITHUB_OUTPUT"
+          echo "OUT=$OUT" >> "$GITHUB_ENV"
+      - name: Generate HELIOS completion dossier
+        run: python -m agialpha_sovereign_capstone helios-complete --out "$OUT"
+      - name: Upload HELIOS completion artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: helios-004-completion-${{ github.run_id }}
+          path: ${{ env.OUT }}
+          retention-days: 30
+      - name: Prepare merged Pages content
+        if: ${{ env.PUBLISH_PAGES == 'true' && github.ref_name == 'main' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _pages && mkdir -p _pages
+          if git ls-remote --exit-code --heads origin pages-branch-disabled >/dev/null; then
+            git fetch origin pages-branch-disabled:pages-branch-disabled
+            git --work-tree _pages checkout pages-branch-disabled -- .
+          fi
+          rm -rf _pages/helios-004
+          mkdir -p _pages/helios-004
+          cp -a "${OUT}/." "_pages/helios-004/"
+      - name: Upload experiment bundle artifact
+        if: ${{ env.PUBLISH_PAGES == 'true' && github.ref_name == 'main' }}
+        uses: actions/upload-artifact@v4
+        with:
+          path: _pages
+
+  notify-evidence-hub:
+    name: Publish HELIOS completion page
+    needs: helios-complete
+    if: ${{ false }}
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pages-publish-main
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/upload-artifact@v4
