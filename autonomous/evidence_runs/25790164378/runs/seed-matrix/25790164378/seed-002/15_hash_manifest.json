@@ -1,0 +1,113 @@
+{
+  "claim_boundary": "This artifact does not claim achieved AGI, ASI, empirical SOTA, safe autonomy, standard-setting control, guaranteed economic return, or civilization-scale capability. It records a bounded Evidence Docket. Stronger claims require independent replay, full baselines, cost/safety ledger review, delayed outcomes, and independent audit.",
+  "files": [
+    {
+      "bytes": 10300,
+      "path": "00_manifest.json",
+      "sha256": "f309d561e6f374152063f5aacd9e14a4ae9f228d55e8d8b0d93773c88aef384c"
+    },
+    {
+      "bytes": 1614,
+      "path": "01_seed_001.json",
+      "sha256": "189bed80c8fb4d754124879722fea45ad9cf7da006bf211d62f76b80a14089cc"
+    },
+    {
+      "bytes": 770,
+      "path": "02_mark_review_card.json",
+      "sha256": "329bb41b59ef5fdffb94e1d2fee5ef01513749526db81034436662cfbb6670b0"
+    },
+    {
+      "bytes": 459,
+      "path": "03_sovereign_001.json",
+      "sha256": "ec2af40663af7b82aeb33ee9b5307251947915549036b6da06f704a6b06ddfb8"
+    },
+    {
+      "bytes": 43311,
+      "path": "04_job_outputs.json",
+      "sha256": "30e3d2f815f3b048a3bb2841173e4487ff57315ff0d0e1ba1803e28cba0e1917"
+    },
+    {
+      "bytes": 5254,
+      "path": "05_sources_used.json",
+      "sha256": "3c679adab9d3b92295807066587ad3d9260d01cff30dfad652fde9b2750339d7"
+    },
+    {
+      "bytes": 4337,
+      "path": "06_accepted_interventions.json",
+      "sha256": "aafc5d1274c146939c23faab2f7de77923bdad037a70d3ba8b4636efdb27d187"
+    },
+    {
+      "bytes": 1793,
+      "path": "07_coldchain_energy_compiler_v0.json",
+      "sha256": "7f9e5643bc96912210522f8460a49a03d090b18587b7d8bf56a0c6a432d33f66"
+    },
+    {
+      "bytes": 2110,
+      "path": "08_seed_002.json",
+      "sha256": "c50e9ae0e1a069e125fb19a6018018a04413a387fb93baba7fd5971dbd4fc939"
+    },
+    {
+      "bytes": 429,
+      "path": "09_treatment_control_comparison.json",
+      "sha256": "49212ffb8f155cd905d0a28ad46dfc1c2d41442df0743377d8f8c34cb9ce1f39"
+    },
+    {
+      "bytes": 976,
+      "path": "10_decision_memo.md",
+      "sha256": "e4da84aba02bbd619804edb135994542db813fa7ead9e32e9b69dee8a317aa71"
+    },
+    {
+      "bytes": 730,
+      "path": "11_cost_ledger.json",
+      "sha256": "3fd52992470a47500b256ac1ad93a0386b2e36f02bc2e69d92afce50bc310990"
+    },
+    {
+      "bytes": 876,
+      "path": "12_safety_ledger.json",
+      "sha256": "0f8222dfe140fd9b67d0df979ad9d51143ea45dddf25c43f5483c2cd97484964"
+    },
+    {
+      "bytes": 1688,
+      "path": "13_baseline_results.json",
+      "sha256": "216e98a3ff1730d2e1221fe3ddfb152633412a3ba4a7bc8f86bbbc36d325c306"
+    },
+    {
+      "bytes": 555,
+      "path": "14_replay_report.json",
+      "sha256": "5e56993fc8d4e81c3853ab2b4f29f128967c656ba66116043a397102947247ee"
+    },
+    {
+      "bytes": 509,
+      "path": "16_independent_review.md",
+      "sha256": "2cd7b63f590e88d38808ae4914855eb24dc6a2ce3818e5a8134b6e8c10595b06"
+    },
+    {
+      "bytes": 1012,
+      "path": "17_state_for_next_run.json",
+      "sha256": "555871c7ec0ea6ee49babd4fe51e74a287b425e6c234d523611ec954fc466d16"
+    },
+    {
+      "bytes": 3061,
+      "path": "18_source_snapshot.json",
+      "sha256": "0a3ed820c49bd0e140864d333cc5db9021a5372f16f817dd888cbecb57e46bce"
+    },
+    {
+      "bytes": 817,
+      "path": "19_claim_boundary.json",
+      "sha256": "5876eaf7af4c7789da7db9cfc45fd5a0a890d7e7c1a6d15c9a567d6c61cd1833"
+    },
+    {
+      "bytes": 346,
+      "path": "REPLAY_INSTRUCTIONS.md",
+      "sha256": "dfc8b992ea941853c46d56d9140adccbcea2d6bfe98af3cad4d3937bc00432d6"
+    },
+    {
+      "bytes": 2341,
+      "path": "claim_level.json",
+      "sha256": "74c2331f0d9a6e3b8c388c76f2f3e6eb07dd210b18d9fc82de0ea4d0e15ee609"
+    }
+  ],
+  "generated_at_epoch": 1778664076,
+  "root_sha256": "39099cf13761b49fbb5b7ddc3a000b142b6591c1de7f2042b1b2a1deb4cc3e34",
+  "schema": "agialpha.hash_manifest.v1"
+}
