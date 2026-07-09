@@ -1,0 +1,11 @@
+{
+  "cycle_hashes": [
+    "0fb20c8fc90cf97cf1ebeb859aad165cf5d381637d8b99c49f5f309f377b7dac",
+    "83c52067d54207f3274fbd369e4fb13a02d28418332c6bbfaca97b29706e85d0",
+    "b030d12c862b28f7320500a752ac9d07f8896c7c739779f811bbcbec2ef66d52",
+    "f18a1c8552056a6c9f54d7be1b61a6bf76b4dbd6cadd1d280eacdec63372bb89",
+    "617ebf82ef303ebcf4d6dfa59fdfca56cf88b58fd738d9476bc31301c41a82ba"
+  ],
+  "final_state_hash": "617ebf82ef303ebcf4d6dfa59fdfca56cf88b58fd738d9476bc31301c41a82ba",
+  "initial_state_hash": "0bcbcb09b085eb434cb9b3677d73409a7413abb495a4f4b9f7f7ec3debe626c1"
+}
